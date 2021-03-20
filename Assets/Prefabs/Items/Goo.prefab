@@ -91,8 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4873707957689438299}
   - component: {fileID: 4716661374448005529}
+  - component: {fileID: 1250048182783569359}
   m_Layer: 0
-  m_Name: Apple
+  m_Name: Goo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +143,18 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4899715651751335511}
   m_Enabled: 1
+--- !u!114 &1250048182783569359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875583741345337033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8aa5f76345da343b6b41ad1aae9b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4875695699524173757
 GameObject:
   m_ObjectHideFlags: 0

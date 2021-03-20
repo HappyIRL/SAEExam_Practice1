@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6280003397527187441}
   - component: {fileID: 6191659498161519393}
+  - component: {fileID: 1351744553051491787}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -142,6 +143,18 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6297514520397248709}
   m_Enabled: 1
+--- !u!114 &1351744553051491787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283267995979270521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8aa5f76345da343b6b41ad1aae9b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6283413023198472661
 GameObject:
   m_ObjectHideFlags: 0

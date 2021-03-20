@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947452543199707023}
   - component: {fileID: 7818798446657351987}
+  - component: {fileID: 5522232649057269007}
   m_Layer: 0
   m_Name: Stones
   m_TagString: Untagged
@@ -318,3 +319,15 @@ LODGroup:
     renderers:
     - renderer: {fileID: 7930832755953882489}
   m_Enabled: 1
+--- !u!114 &5522232649057269007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953228243668303489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8aa5f76345da343b6b41ad1aae9b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

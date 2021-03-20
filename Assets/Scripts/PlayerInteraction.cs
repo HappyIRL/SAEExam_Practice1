@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+	public event Action<ItemInteraction> StartInteraction;
+
 	[SerializeField] private PlayerInput playerInput;
 	[SerializeField] private PlayerRaycastInteraction raycastInteraction;
-
-	private ItemInteraction currentRayInteraction;
-	private ItemInteraction lastRayInteraction;
+	[SerializeField] private TMPro.TMP_Text displayItemText;
 
 	private void OnEnable()
 	{
@@ -23,28 +23,34 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		if (raycastInteraction.IsLookingAtCurrent)
 		{
-			//do stuff
+			SetDisplayText();
 		}
+		else
+		{
+			displayItemText.text = "";
+		}
+	}
+
+	private void SetDisplayText()
+	{
+		displayItemText.text = raycastInteraction.CurrentInteraction.GetItemType() + " (E to PickUp)";
+		Vector3 itemPosition = raycastInteraction.CurrentInteraction.GetItemPosition();
+		displayItemText.transform.position = new Vector3(itemPosition.x, itemPosition.y + 2, itemPosition.z);
 	}
 
 	private void OnTryInteract()
 	{
-		Debug.Log("OnTryInteract");
-
-		currentRayInteraction = raycastInteraction.CurrentInteraction;
-		lastRayInteraction = raycastInteraction.LastInteraction;
-
-		Debug.Log($"last:{lastRayInteraction} ; current:{currentRayInteraction}");
-
-		if (currentRayInteraction != lastRayInteraction)
+		if (raycastInteraction.CurrentInteraction != raycastInteraction.LastInteraction)
 		{
-			lastRayInteraction?.StopInteraction();
+			raycastInteraction.LastInteraction?.StopInteraction();
 
-			currentRayInteraction?.StartInteraction();
+			StartInteraction?.Invoke(raycastInteraction.CurrentInteraction);
+
+			raycastInteraction.CurrentInteraction?.StartInteraction();
 		}
 		else
 		{
-			currentRayInteraction?.StopInteraction();
+			raycastInteraction.CurrentInteraction?.StopInteraction();
 		}
 	}
 }

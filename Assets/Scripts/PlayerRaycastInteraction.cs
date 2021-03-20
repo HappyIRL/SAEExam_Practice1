@@ -15,11 +15,8 @@ public class PlayerRaycastInteraction : MonoBehaviour
 	{
 		if (Physics.Raycast(playerTarget.position, playerTarget.forward, out RaycastHit hitInfo, Mathf.Infinity))
 		{
-			Debug.Log(hitInfo.collider.transform.parent.gameObject.name);
-
 			if (hitInfo.collider.transform.parent.TryGetComponent(out ItemInteraction itemInteraction))
 			{
-				Debug.Log("item has interaction");
 				if (CurrentInteraction != null && itemInteraction != CurrentInteraction) LastInteraction = CurrentInteraction;
 
 				IsLookingAtCurrent = true;

@@ -11,7 +11,6 @@ public class PlayerInput : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button1))
 		{
 			TryInteract?.Invoke();
-			Debug.Log("pressing e");
 		}
 	}
 }
